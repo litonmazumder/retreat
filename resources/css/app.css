@@ -1,0 +1,20 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import "tailwindcss";
+
+@theme {
+    --color-beige: #F8F1E7;
+    --color-sight: #7C6EE6;
+    --color-hearing: #3B82C4;
+    --color-smell: #65A86B;
+    --color-taste: #E59A5C;
+    --color-touch: #D47A8D;
+    --color-feel: #E07A5F;
+}
+
+/* Your files */
+@source "../views/**/*.blade.php";
+@source "../js/**/*.js";
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+
+/* Flowbite */
+@source "../../node_modules/flowbite";

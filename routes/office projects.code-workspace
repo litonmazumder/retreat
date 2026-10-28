@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "scbgd-portal",
+			"path": "../../scbgd-portal"
+		},
+		{
+			"name": "attendance",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
