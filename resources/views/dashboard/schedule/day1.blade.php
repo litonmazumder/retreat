@@ -1,6 +1,3 @@
-
-{{-- Database-Driven Day 1 Schedule --}}
-<section class="space-y-6" data-retreat-day="2026-11-03">
 @php
     $dayDate = '2026-11-03';
 
@@ -43,24 +40,73 @@
             'label' => 'Departure Point',
             'place' => 'Swisscontact Country Office',
         ],
-        'Arrival' => [
+        'Arrival and Venue Registration' => [
             'items' => ['Arrive at the retreat venue', 'Complete venue registration'],
             'place' => 'Sarah Resort Reception',
         ],
         'Opening Ceremony' => [
-            'items' => ['Welcome remarks', 'Safety & security briefing', 'Ice-breaking'],
+            'items' => ['Welcome remarks', 'Safety & security briefing', 'Staff Awards', 'Ice-breaking'],
             'people' => 'Helal Hussain, Tamiz Uddin Mullick, Humaira Ferdous Shifa',
+        ],
+        'Lunch break and Check-in' => [
+            'items' => ['Remember to wear your Retreat T‑Shirt'],
         ],
         'GESI Session' => [
             'items' => ['GESI session for all staff'],
-            'people' => 'Nithora Mehrab', 'Azmul Huda'
+            'people' => 'Nithora Mehrab, Azmul Huda',
         ],
         'Fire & Safety' => [
             'items' => ['Fire and safety refresher for all staff'],
             'people' => 'Sabbir Rahman Khan, Moumita A Mallick',
         ],
+        'Team Photo' => [
+            'items' => ['Remember to wear your Retreat T‑Shirt'],
+        ],
+        'Free Time & Venue Exploration' => [
+            'items' => ["Let's Play Football : Central Field", 'Snack available at central field'],
+        ],
     ];
 @endphp
+    {{-- Day Header --}}
+<section class="space-y-6" data-retreat-day="2026-11-03">
+    <div class="mb-5 rounded-2xl border border-blue-100 bg-blue-50 p-4">
+        <div class="flex items-start justify-between gap-4">
+
+            <div class="min-w-0 flex-1">
+                <p class="text-xs font-semibold uppercase tracking-widest text-[#00477A]">
+                    Tuesday • 3 November 2026
+                </p>
+
+                <h2 class="mt-1 text-lg font-bold text-slate-900">
+                    Arrival, Connection & Celebration
+                </h2>
+
+                <div class="mt-3 space-y-1 text-sm text-slate-600">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-hotel w-4 text-[#00477A]"></i>
+                        <span>Sarah Resort, Gazipur</span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-days w-4 text-[#00477A]"></i>
+                        <span>Swisscontact Bangladesh • Annual Retreat 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <a
+                href="https://maps.app.goo.gl/gA2fJzFEQ1ukS2Zv7"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Open Sarah Resort in Google Maps"
+                aria-label="Open Sarah Resort in Google Maps"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#00477A] shadow-sm transition hover:bg-[#00477A] hover:text-white"
+            >
+                <i class="fa-solid fa-location-dot"></i>
+            </a>
+
+        </div>
+    </div>
 
 <div
     class="space-y-5"
@@ -101,9 +147,9 @@
                 {{ $title }}
             </h3>
 
-            @if ($schedule->subtitle)
+            <!-- @if ($schedule->subtitle)
                 <p class="mt-2 text-sm text-slate-600">{{ $schedule->subtitle }}</p>
-            @endif
+            @endif -->
 
             @if (!empty($detail['items']))
                 <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600">
@@ -148,5 +194,4 @@
     @endforelse
 </div>
 
-<script src="{{ asset('js/retreat-schedule.js') }}?v=4"></script>
 </section>

@@ -1,10 +1,169 @@
 
-<section class="space-y-6">
+@php
+    $dayDate = '2026-11-04';
+
+    $daySchedules = $schedules->get($dayDate, collect());
+
+    $styles = [
+        'Breakfast' => [
+            'border-emerald-500',
+            'bg-emerald-50',
+            'text-emerald-700',
+            'text-emerald-800',
+            'border-emerald-200',
+        ],
+        'বনমেলা: Swisscontact Carnival' => [
+            'border-blue-600',
+            'bg-white',
+            'text-blue-700',
+            'text-slate-900',
+            'border-slate-200',
+        ],
+        'Lunch' => [
+            'border-emerald-500',
+            'bg-emerald-50',
+            'text-emerald-700',
+            'text-emerald-800',
+            'border-emerald-200',
+        ],
+        'হই হই রই রই' => [
+            'border-orange-500',
+            'bg-orange-50',
+            'text-orange-700',
+            'text-orange-800',
+            'border-orange-200',
+        ],
+        'Indoor to Outdoor Transition' => [
+            'border-amber-500',
+            'bg-amber-50',
+            'text-amber-700',
+            'text-amber-800',
+            'border-amber-200',
+        ],
+        'Tic Tac Toe Relay' => [
+            'border-indigo-500',
+            'bg-indigo-50',
+            'text-indigo-700',
+            'text-indigo-800',
+            'border-indigo-200',
+        ],
+        'Team-Building Games & Activities' => [
+            'border-blue-600',
+            'bg-white',
+            'text-blue-700',
+            'text-slate-900',
+            'border-slate-200',
+        ],
+        'চলো ঘুড়ি ওড়াতে যাই' => [
+            'border-indigo-500',
+            'bg-indigo-50',
+            'text-indigo-700',
+            'text-indigo-800',
+            'border-indigo-200',
+        ],
+        'Wellbeing Session' => [
+            'border-blue-600',
+            'bg-white',
+            'text-blue-700',
+            'text-slate-900',
+            'border-slate-200',
+        ],
+        'Free Time & Venue Exploration' => [
+            'border-amber-500',
+            'bg-amber-50',
+            'text-amber-700',
+            'text-amber-800',
+            'border-amber-200',
+        ],
+        'তারা: Dinner, Stargazing & Karaoke Night' => [
+            'border-indigo-600',
+            'bg-indigo-50',
+            'text-indigo-700',
+            'text-indigo-900',
+            'border-indigo-200',
+        ],
+    ];
+
+    $icons = [
+        'Breakfast' => 'fa-mug-hot',
+        'বনমেলা: Swisscontact Carnival' => 'fa-wand-magic-sparkles',
+        'Lunch' => 'fa-utensils',
+        'Team-Building Games & Activities' => 'fa-people-group',
+        'চলো ঘুড়ি ওড়াতে যাই' => 'fa-paper-plane',
+        'Wellbeing Session' => 'fa-heart-pulse',
+        'Free Time & Venue Exploration' => 'fa-person-walking',
+        'তারা: Dinner, Stargazing & Karaoke Night' => 'fa-star',
+    ];
+
+    /*
+     * Supplemental details retained from the original Day 2 design.
+     * Schedule title, times, subtitle, description and venue come
+     * from the database.
+     */
+    $details = [
+        'Breakfast' => [
+            'location' => 'Club House Restaurant',
+        ],
+        'বনমেলা: Swisscontact Carnival' => [
+            'groups' => [
+                'Indoor Activities' => [
+                    'icon' => 'fa-palette',
+                    'items' => ['Origami', 'Poi spinning', 'Terrarium making'],
+                ],
+                'Outdoor Activities' => [
+                    'icon' => 'fa-wind',
+                    'items' => ['Kite making', 'Poetry', 'Photography'],
+                ],
+            ],
+            'people' => 'Nowshin Anjum, Marajul Islam Tushar, Ali Mohammad Moyeth, Ahmed Rifat Kabir Sristy, Monir Hossain, Abul Basar, Salma Akhter, Shohidul Alam, Anika Noor, Ahsan Habib, Nirjan Neeladri',
+            'locations' => [
+                'Banquet Hall (indoor)',
+                'Beside Central Field (outdoor)',
+            ],
+        ],
+        'Lunch' => [
+            'location' => 'Club House Restaurant',
+        ],
+        'হই হই রই রই' => [
+            'people' => 'Tawhidul Islam, Marajul Islam',
+            'location' => 'Banquet Hall',
+        ],
+        'Indoor to Outdoor Transition' => [
+            'items' => ['Outdoor Snacks at 4:00 PM, Central Field'],
+        ],
+        'Tic Tac Toe Relay' => [
+            'people' => 'Tasmim Sinha, Abir Hossain',
+            'location' => 'Central Field',
+        ],
+        'Team-Building Games & Activities' => [
+            'people' => 'Nowshin Anjum',
+            'location' => 'Banquet Hall & Central Field',
+        ],
+                'Team-Building Games & Activities' => [
+            'people' => 'Nowshin Anjum',
+            'location' => 'Banquet Hall & Central Field',
+        ],       
+        'চলো ঘুড়ি ওড়াতে যাই' => [
+            'location' => 'Central Field',
+        ],
+        'Wellbeing Session' => [
+            'people' => 'Salma Akhter, Mir Rafiat Salman',
+            'location' => 'Auditorium',
+        ],
+        'তারা: Dinner, Stargazing & Karaoke Night' => [
+            'items' => ['Dinner', 'Stargazing', 'Karaoke'],
+            'people' => 'Zubuyer Kaolin',
+            'location' => 'Camp Ground',
+        ],
+    ];
+@endphp
+
+<section class="space-y-6" data-retreat-day="{{ $dayDate }}">
 
     {{-- Day Header --}}
     <div class="mb-5 rounded-2xl border border-blue-100 bg-blue-50 p-4">
         <div class="flex items-start justify-between gap-4">
-            <div class="flex-1">
+            <div class="min-w-0 flex-1">
                 <p class="text-xs font-semibold uppercase tracking-widest text-[#00477A]">
                     Wednesday • 4 November 2026
                 </p>
@@ -31,227 +190,134 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Open Sarah Resort in Google Maps"
-                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#00477A] shadow-sm transition hover:bg-[#00477A] hover:text-white">
+                aria-label="Open Sarah Resort in Google Maps"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#00477A] shadow-sm transition hover:bg-[#00477A] hover:text-white"
+            >
                 <i class="fa-solid fa-location-dot"></i>
             </a>
         </div>
     </div>
 
-    {{-- Schedule --}}
-    <div class="space-y-5">
+    {{-- Database-Driven Schedule --}}
+    <div class="space-y-5" data-retreat-schedule>
 
-        {{-- 08:00 - 10:00 Breakfast --}}
-        <div class="rounded-2xl border-l-4 border-emerald-500 bg-emerald-50 p-5">
-            <p class="text-sm font-semibold text-emerald-700">
-                08:00 – 10:00
-            </p>
+        @forelse ($daySchedules as $schedule)
 
-            <h3 class="mt-1 text-lg font-bold text-emerald-800">
-                <i class="fa-solid fa-mug-hot mr-2"></i>
-                Breakfast
-            </h3>
+            @php
+                $title = $schedule->title;
+                $detail = $details[$title] ?? [];
+                $style = $styles[$title] ?? [
+                    'border-blue-600',
+                    'bg-white',
+                    'text-blue-700',
+                    'text-slate-900',
+                    'border-slate-200',
+                ];
 
-            <div class="mt-4 border-t border-emerald-200 pt-3">
-                <p class="text-sm text-emerald-800">
-                    <i class="fa-solid fa-location-dot mr-2"></i>
-                    Club House Restaurant
-                </p>
-            </div>
-        </div>
+                $icon = $icons[$title] ?? 'fa-calendar-day';
+                $start = substr((string) $schedule->start_time, 0, 5);
+                $end = substr((string) $schedule->end_time, 0, 5);
+            @endphp
 
-        {{-- 10:00 - 12:30 Swisscontact Carnival --}}
-        <div class="rounded-2xl border-l-4 border-blue-600 bg-white p-5 shadow-sm">
-            <p class="text-sm font-semibold text-blue-700">
-                10:00 – 12:30
-            </p>
-
-            <h3 class="mt-1 text-lg font-bold text-slate-900">
-                <i class="fa-solid fa-wand-magic-sparkles mr-2 text-[#00477A]"></i>
-                বনমেলা: Swisscontact Carnival
-            </h3>
-
-            <div class="mt-3 space-y-3 text-sm text-slate-600">
-                <div>
-                    <p class="font-semibold text-slate-700">
-                        <i class="fa-solid fa-palette mr-2 text-[#00477A]"></i>
-                        Indoor Activities
+            <article
+                data-schedule-card
+                data-start="{{ $start }}"
+                data-end="{{ $end }}"
+                class="rounded-2xl border-l-4 p-5 {{ $style[0] }} {{ $style[1] }} {{ in_array($title, ['Breakfast', 'Lunch', 'Free Time & Venue Exploration', 'চলো ঘুড়ি ওড়াতে যাই', 'তারা: Dinner, Stargazing & Karaoke Night']) ? '' : 'shadow-sm' }}"
+            >
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <p class="text-sm font-semibold {{ $style[2] }}">
+                        {{ $start }} – {{ $end }}
                     </p>
-                    <ul class="mt-1 list-disc space-y-1 pl-5">
-                        <li>Origami</li>
-                        <li>Poi spinning</li>
-                        <li>Terrarium making</li>
-                    </ul>
+
+                    <span
+                        data-schedule-badge
+                        class="hidden shrink-0 rounded-full px-3 py-1 text-xs font-bold"
+                    ></span>
                 </div>
 
-                <div>
-                    <p class="font-semibold text-slate-700">
-                        <i class="fa-solid fa-wind mr-2 text-[#00477A]"></i>
-                        Outdoor Activities
+                <h3 class="mt-1 text-lg font-bold {{ $style[3] }}">
+                    <i class="fa-solid {{ $icon }} mr-2"></i>
+                    {{ $title }}
+                </h3>
+
+                @if ($schedule->subtitle)
+                    <p class="mt-2 text-sm {{ $style[3] }}">
+                        {{ $schedule->subtitle }}
                     </p>
-                    <ul class="mt-1 list-disc space-y-1 pl-5">
-                        <li>Kite making</li>
-                        <li>Poetry</li>
-                        <li>Photography</li>
+                @endif
+
+                {{-- Carnival activity groups --}}
+                @if (!empty($detail['groups']))
+                    <div class="mt-3 space-y-3 text-sm text-slate-600">
+                        @foreach ($detail['groups'] as $groupTitle => $group)
+                            <div>
+                                <p class="font-semibold text-slate-700">
+                                    <i class="fa-solid {{ $group['icon'] }} mr-2 text-[#00477A]"></i>
+                                    {{ $groupTitle }}
+                                </p>
+
+                                <ul class="mt-1 list-disc space-y-1 pl-5">
+                                    @foreach ($group['items'] as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+
+                {{-- Activity list --}}
+                @if (!empty($detail['items']))
+                    <ul class="mt-3 list-disc space-y-1 pl-5 text-sm {{ $style[3] }}">
+                        @foreach ($detail['items'] as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
                     </ul>
-                </div>
+                @endif
+
+                {{-- Database description --}}
+                @if ($schedule->description)
+                    <p class="mt-3 text-sm leading-6 text-slate-600">
+                        {{ $schedule->description }}
+                    </p>
+                @endif
+
+                {{-- Facilitators / people --}}
+                @if (!empty($detail['people']))
+                    <div class="mt-4 border-t {{ $style[4] }} pt-3">
+                        <p class="text-sm text-slate-500">
+                            <i class="fa-solid fa-users mr-2 text-[#00477A]"></i>
+                            {{ $detail['people'] }}
+                        </p>
+                    </div>
+                @endif
+
+                {{-- Locations --}}
+                @if (!empty($detail['locations']))
+                    <div class="mt-3 space-y-2">
+                        @foreach ($detail['locations'] as $location)
+                            <p class="text-sm text-slate-600">
+                                <i class="fa-solid fa-location-dot mr-2 text-[#00477A]"></i>
+                                {{ $location }}
+                            </p>
+                        @endforeach
+                    </div>
+                @elseif (!empty($detail['location']) || $schedule->venue)
+                    <div class="mt-4 border-t {{ $style[4] }} pt-3">
+                        <p class="text-sm {{ $style[3] }}">
+                            <i class="fa-solid fa-location-dot mr-2 text-[#00477A]"></i>
+                            {{ $detail['location'] ?? $schedule->venue }}
+                        </p>
+                    </div>
+                @endif
+            </article>
+
+        @empty
+            <div class="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-800">
+                No active Day 2 schedule found for 4 November 2026. Check the schedule date, event ID, and active status.
             </div>
-
-            <div class="mt-5 border-t border-slate-200 pt-4">
-                <p class="text-sm text-slate-500">
-                    <i class="fa-solid fa-users mr-2 text-[#00477A]"></i>
-                    Nowshin Anjum, Marajul Islam Tushar,
-                    Ali Mohammad Moyeth, Ahmed Rifat Kabir Sristy,
-                    Monir Hossain, Abul Basar, Salma Akhter,
-                    Shohidul Alam, Anika Noor
-                </p>
-            </div>
-
-            <div class="mt-3 space-y-2">
-                <p class="text-sm text-slate-600">
-                    <i class="fa-solid fa-location-dot mr-2 text-[#00477A]"></i>
-                    Banquet Hall (indoor)
-                </p>
-                <p class="text-sm text-slate-600">
-                    <i class="fa-solid fa-location-dot mr-2 text-[#00477A]"></i>
-                    Beside Central Field (outdoor)
-                </p>
-            </div>
-        </div>
-
-        {{-- 12:30 - 14:00 Lunch --}}
-        <div class="rounded-2xl border-l-4 border-emerald-500 bg-emerald-50 p-5">
-            <p class="text-sm font-semibold text-emerald-700">
-                12:30 – 14:00
-            </p>
-
-            <h3 class="mt-1 text-lg font-bold text-emerald-800">
-                <i class="fa-solid fa-utensils mr-2"></i>
-                Lunch
-            </h3>
-
-            <div class="mt-4 border-t border-emerald-200 pt-3">
-                <p class="text-sm text-emerald-800">
-                    <i class="fa-solid fa-location-dot mr-2"></i>
-                    Club House Restaurant
-                </p>
-            </div>
-        </div>
-
-        {{-- 14:00 - 16:00 Team Building --}}
-        <div class="rounded-2xl border-l-4 border-blue-600 bg-white p-5 shadow-sm">
-            <p class="text-sm font-semibold text-blue-700">
-                14:00 – 16:00
-            </p>
-
-            <h3 class="mt-1 text-lg font-bold text-slate-900">
-                <i class="fa-solid fa-people-group mr-2 text-[#00477A]"></i>
-                Team-Building Games &amp; Activities
-            </h3>
-
-            <div class="mt-4 border-t border-slate-200 pt-3">
-                <p class="text-sm text-slate-500">
-                    <i class="fa-solid fa-user mr-2 text-[#00477A]"></i>
-                    Nowshin Anjum
-                </p>
-            </div>
-
-            <div class="mt-3 space-y-2">
-                <p class="text-sm text-slate-600">
-                    <i class="fa-solid fa-location-dot mr-2 text-[#00477A]"></i>
-                    Banquet Hall &amp; Central Field
-                </p>
-            </div>
-        </div>
-
-        {{-- 16:00 - 17:00 Kite Flying --}}
-        <div class="rounded-2xl border-l-4 border-indigo-500 bg-indigo-50 p-5">
-            <p class="text-sm font-semibold text-indigo-700">
-                16:00 – 17:00
-            </p>
-
-            <h3 class="mt-1 text-lg font-bold text-indigo-800">
-                <i class="fa-solid fa-paper-plane mr-2"></i>
-                চলো ঘুড়ি ওড়াতে যাই
-            </h3>
-
-            <div class="mt-4 border-t border-indigo-200 pt-3">
-                <p class="text-sm text-indigo-800">
-                    <i class="fa-solid fa-location-dot mr-2"></i>
-                    Central Field
-                </p>
-            </div>
-        </div>
-
-        {{-- 17:00 - 18:00 Wellbeing --}}
-        <div class="rounded-2xl border-l-4 border-blue-600 bg-white p-5 shadow-sm">
-            <p class="text-sm font-semibold text-blue-700">
-                17:00 – 18:00
-            </p>
-
-            <h3 class="mt-1 text-lg font-bold text-slate-900">
-                <i class="fa-solid fa-heart-pulse mr-2 text-[#00477A]"></i>
-                Wellbeing Session
-            </h3>
-
-            <div class="mt-4 border-t border-slate-200 pt-3">
-                <p class="text-sm text-slate-500">
-                    <i class="fa-solid fa-users mr-2 text-[#00477A]"></i>
-                    Salma Akhter, Mir Rafiat Salman
-                </p>
-            </div>
-
-            <div class="mt-3">
-                <p class="text-sm text-slate-600">
-                    <i class="fa-solid fa-location-dot mr-2 text-[#00477A]"></i>
-                    Auditorium
-                </p>
-            </div>
-        </div>
-
-        {{-- 18:00 - 19:30 Free Time --}}
-        <div class="rounded-2xl border-l-4 border-amber-500 bg-amber-50 p-5">
-            <p class="text-sm font-semibold text-amber-700">
-                18:00 – 19:30
-            </p>
-
-            <h3 class="mt-1 text-lg font-bold text-amber-800">
-                <i class="fa-solid fa-person-walking mr-2"></i>
-                Free Time &amp; Venue Exploration
-            </h3>
-        </div>
-
-        {{-- 19:30 - 22:00 Dinner, Stargazing & Karaoke --}}
-        <div class="rounded-2xl border-l-4 border-purple-500 bg-purple-50 p-5">
-            <p class="text-sm font-semibold text-purple-700">
-                19:30 – 22:00
-            </p>
-
-            <h3 class="mt-1 text-lg font-bold text-purple-800">
-                <i class="fa-solid fa-star mr-2"></i>
-                তারা: Dinner, Stargazing &amp; Karaoke Night
-            </h3>
-
-            <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-purple-800">
-                <li>Dinner</li>
-                <li>Stargazing</li>
-                <li>Karaoke</li>
-            </ul>
-
-            <div class="mt-4 border-t border-purple-200 pt-3">
-                <p class="text-sm text-purple-800">
-                    <i class="fa-solid fa-user mr-2"></i>
-                    Zubuyer Kaolin
-                </p>
-            </div>
-
-            <div class="mt-3">
-                <p class="text-sm text-purple-800">
-                    <i class="fa-solid fa-location-dot mr-2"></i>
-                    Camp Ground
-                </p>
-            </div>
-        </div>
+        @endforelse
 
     </div>
-
 </section>

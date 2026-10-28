@@ -12,90 +12,57 @@
 
 {{-- ================= Day Navigation ================= --}}
 
-<div class="sticky top-[100px] z-40 bg-slate-100 px-5 py-3">
 
-    <div class="rounded-3xl bg-white p-2 shadow">
+<div
+    id="day-navigation"
+    class="sticky z-40 w-full bg-white px-5 py-3"
+    style="top: var(--header-height, 0px);"
+>
+    <div class="w-full rounded-3xl border border-slate-200 bg-white p-2 shadow-sm">
+        <div class="grid w-full grid-cols-3 gap-2">
 
-<div class="grid grid-cols-3 gap-2">
+            @foreach($seminarDays as $day => $date)
 
-    @foreach($seminarDays as $day => $date)
+                @php
+                    $isConfirmed = $attendanceStatus[$day]['submitted'] ?? false;
+                @endphp
 
-        @php
-            $isConfirmed = $attendanceStatus[$day]['submitted'] ?? false;
-        @endphp
+                <button
+                    type="button"
+                    @click="day = {{ $day }}"
+                    :aria-pressed="day === {{ $day }} ? 'true' : 'false'"
+                    :class="day === {{ $day }}
+                        ? 'bg-[#00477A] text-white shadow-md'
+                        : 'bg-white text-slate-600 hover:bg-slate-100'"
+                    class="relative flex min-w-0 flex-col items-center justify-center rounded-2xl px-1 py-3 text-center touch-manipulation transition-colors duration-150"
+                >
 
-        <button
-            @click="day={{ $day }}"
-            :class="day == {{ $day }}
-                ? 'bg-[#00477A] text-white shadow-md'
-                : 'bg-white text-slate-600 hover:bg-slate-100'"
-            class="relative rounded-2xl py-3 transition-all duration-300">
+                    {{-- Attendance indicator --}}
+                    @if($isConfirmed)
+                        <span
+                            class="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-white"
+                            title="Attendance confirmed"
+                        >
+                            <i class="fa-solid fa-check text-[10px]"></i>
+                        </span>
+                    @endif
 
-            {{-- Attendance Check --}}
-            @if($isConfirmed)
-
-                <div
-                    x-data="{ show: false }"
-                    class="absolute right-2 top-2">
-
-                    <span
-                        @click.stop="show = !show"
-                        @mouseenter="show = true"
-                        @mouseleave="show = false"
-                        class="flex h-5 w-5 cursor-pointer items-center justify-center rounded-full bg-green-500 text-white">
-
-                        <i class="fa-solid fa-check text-[10px]"></i>
-
+                    <span class="text-sm font-semibold">
+                        Day {{ $day }}
                     </span>
-                    {{-- Tooltip --}}
-                    <div
-                        x-cloak
-                        x-show="show"
-                        x-transition
-                        @click.away="show = false"
-                        class="absolute right-0 z-50 mt-2 w-56 rounded-xl bg-slate-900 p-3 text-left text-xs text-white shadow-xl">
 
-                        <div class="flex items-start gap-2">
+                    <span class="mt-1 text-xs opacity-80">
+                        {{ $date->format('d M') }}
+                    </span>
 
-                            <i class="fa-solid fa-circle-check mt-0.5 text-green-400"></i>
+                </button>
 
-                            <div>
+            @endforeach
 
-                                <p class="font-semibold">
-                                    Attendance Confirmed
-                                </p>
-
-                                <p class="mt-1 text-slate-300">
-                                    Your attendance for <strong>Day {{ $day }}</strong> has been successfully recorded.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            @endif
-
-            <div class="font-semibold">
-                Day {{ $day }}
-            </div>
-
-            <div class="text-xs opacity-80">
-                {{ $date->format('d M') }}
-            </div>
-
-        </button>
-
-    @endforeach
-
-</div>
-
+        </div>
     </div>
-
 </div>
+
 
     {{-- =========================
         Flash Messages
@@ -289,19 +256,19 @@
 
 @endforeach
 
-<div class="mt-6 px-5 min-h-[500px]">
+<div id="day-schedule-start" class="mt-6 min-h-[500px] px-5">
 
-    <template x-if="day == 1">
+    <div x-show="day === 1" x-cloak>
         @include('dashboard.schedule.day1')
-    </template>
+    </div>
 
-    <template x-if="day == 2">
+    <div x-show="day === 2" x-cloak>
         @include('dashboard.schedule.day2')
-    </template>
+    </div>
 
-    <template x-if="day == 3">
+    <div x-show="day === 3" x-cloak>
         @include('dashboard.schedule.day3')
-    </template>
+    </div>
 
 </div>
 

@@ -24,7 +24,7 @@
 
        //temp check
 
-       const simulatedDateTime = new Date('2026-11-03T18:15:00+06:00');
+       const simulatedDateTime = new Date('2026-11-03T10:00:00+06:00');
 
         const todayDate = new Intl.DateTimeFormat('en-CA', {
             timeZone: 'Asia/Dhaka',

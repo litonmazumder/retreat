@@ -67,6 +67,7 @@
     ========================== --}}
 
 <header
+    id="app-header"
     class="sticky top-0 z-50"
     style="
         background-color:#F2EDE8;
@@ -214,6 +215,35 @@
 </div>
 
 <script>
+
+    (() => {
+        const updateHeaderHeight = () => {
+            const header = document.getElementById('app-header');
+
+            if (!header) return;
+
+            document.documentElement.style.setProperty(
+                '--header-height',
+                `${header.getBoundingClientRect().height}px`
+            );
+        };
+
+        updateHeaderHeight();
+
+        window.addEventListener('resize', updateHeaderHeight);
+
+        if ('ResizeObserver' in window) {
+            const header = document.getElementById('app-header');
+
+            if (header) {
+                new ResizeObserver(updateHeaderHeight).observe(header);
+            }
+        }
+    })();
+
+</script>
+
+<script>
     if ('serviceWorker' in navigator) {
 
         window.addEventListener('load', async () => {
@@ -234,6 +264,8 @@
 
     }
 </script>
+
+<script src="{{ asset('js/retreat-schedule.js') }}?v=6" defer></script>
 
 </body>
 
