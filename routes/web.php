@@ -14,6 +14,8 @@
     use App\Http\Controllers\FeedbackController;
     use App\Http\Controllers\FeedbackPresentationController;
     use App\Http\Controllers\CarnivalAssignmentController;
+    use App\Http\Controllers\RetreatRechargeController;
+    use App\Http\Controllers\RetreatPushSubscriptionController;
     
 Route::get('/', function () {
 
@@ -151,3 +153,23 @@ Route::prefix('carnival/assignments')
         Route::get('/{participant}/edit', 'edit')->name('edit');
         Route::put('/{participant}', 'update')->name('update');
     });
+
+    Route::post(
+    '/recharge/{scheduleId}/claim',
+    [RetreatRechargeController::class, 'claim']
+    )
+    ->middleware('participant.auth')
+    ->whereNumber('scheduleId')
+    ->name('recharge.claim');
+
+    Route::middleware('participant.auth')->group(function () {
+    Route::post(
+        '/push-subscriptions',
+        [RetreatPushSubscriptionController::class, 'store']
+    )->name('push-subscriptions.store');
+
+    Route::delete(
+        '/push-subscriptions',
+        [RetreatPushSubscriptionController::class, 'destroy']
+    )->name('push-subscriptions.destroy');
+});

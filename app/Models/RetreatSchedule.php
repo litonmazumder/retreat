@@ -26,6 +26,7 @@ class RetreatSchedule extends Model
         return [
             'schedule_date' => 'date',
             'is_active' => 'boolean',
+            'recharge_enabled' => 'boolean',
         ];
     }
 
