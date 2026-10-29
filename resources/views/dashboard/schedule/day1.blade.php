@@ -34,6 +34,7 @@
     $details = [
         'Registration & Breakfast' => [
             'items' => ['Registration', 'Takeaway breakfast'],
+            'items' => ['A clean retreat starts with us. Please drop the packets in the bin.'],
         ],
         'Departure from Dhaka' => [
             'items' => ['Travel to Sarah Resort'],
@@ -51,9 +52,9 @@
         'Lunch break and Check-in' => [
             'items' => ['Remember to wear your Retreat T‑Shirt'],
         ],
-        'GESI Session' => [
-            'items' => ['GESI session for all staff'],
-            'people' => 'Nithora Mehrab, Azmul Huda',
+        'Papercuts' => [
+            'items' => ['Meant Well but Landed Awkwardly: A Wellness Check for Our Everyday Behaviour', 'An all staff session'],
+            'people' => 'Projna Dasgupta, Azmul Huda',
         ],
         'Fire & Safety' => [
             'items' => ['Fire and safety refresher for all staff'],
@@ -63,7 +64,7 @@
             'items' => ['Remember to wear your Retreat T‑Shirt'],
         ],
         'Free Time & Venue Exploration' => [
-            'items' => ["Let's Play Football : Central Field", 'Snack available at central field'],
+            'items' => ["Let's Play Cricket : Central Field", 'Snack available at central field'],
         ],
     ];
 @endphp
@@ -160,7 +161,7 @@
             @endif
 
             @if (!empty($detail['people']))
-                <div class="mt-4 border-t border-slate-200 pt-3">
+                <div class="mt-4 pt-3">
                     <p class="mt-1 text-sm text-slate-700">
                         <i class="fa-solid fa-users mr-2 text-[#00477A]"></i>
                         {{ $detail['people'] }}
@@ -169,7 +170,7 @@
             @endif
 
             @if (!empty($detail['label']) || !empty($detail['place']) || $schedule->venue)
-                <div class="mt-4 border-t border-slate-200 pt-3">
+                <div class="mt-4 pt-3">
                     @if (!empty($detail['label']))
                         <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">
                             {{ $detail['label'] }}

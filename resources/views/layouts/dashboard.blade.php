@@ -77,19 +77,19 @@
         background-position:center;
     ">
 
-    <div class="flex items-center justify-between px-5 py-5">
+    <div class="flex items-center justify-between px-20 py-12">
 
         <div class="flex items-center gap-5">
 
             {{-- Branding --}}
-            <div class="shrink-0">
+            <!-- <div class="shrink-0">
 
                 <img
                     src="{{ asset('images/logo/annual_retreat_mnemonic.webp') }}"
                     alt="Annual Retreat 2026 Logo"
                     class="h-16 w-auto">
 
-            </div>
+            </div> -->
 
             {{-- Participant --}}
             <!-- <div>

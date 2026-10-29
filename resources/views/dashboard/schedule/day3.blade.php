@@ -17,7 +17,6 @@
             'bg-white',
             'text-blue-700',
             'text-slate-900',
-            'border-slate-200',
         ],
         'Closing Session & Award Ceremony' => [
             'border-indigo-500',
@@ -31,7 +30,6 @@
             'bg-white',
             'text-blue-700',
             'text-slate-900',
-            'border-slate-200',
         ],
         'Departure for Dhaka' => [
             'border-red-500',
@@ -138,7 +136,6 @@
                     'bg-white',
                     'text-blue-700',
                     'text-slate-900',
-                    'border-slate-200',
                 ];
 
                 $icon = $icons[$title] ?? 'fa-calendar-day';
@@ -203,7 +200,7 @@
                 @endphp
 
                 @if ($venue)
-                    <div class="mt-4 border-t {{ $style[4] }} pt-3">
+                    <div class="mt-4 pt-3">
                         <p class="text-sm {{ $style[3] }}">
                             <i class="fa-solid fa-location-dot mr-2 text-[#00477A]"></i>
                             {{ $venue }}

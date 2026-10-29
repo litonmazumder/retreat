@@ -14,7 +14,7 @@
                 Welcome
             </h1>
             <p class="mt-2 text-sm leading-relaxed text-slate-600 md:mt-3">
-                Sign in with your Swisscontact email address to access all Asia Seminar 2026 content.
+                Sign in with your Swisscontact email address to access all Annual Retreat 2026 content.
             </p>
         </div>
 

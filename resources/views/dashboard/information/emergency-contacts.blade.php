@@ -44,35 +44,42 @@
         </div>
     </section>
 
-    {{-- National Emergency Number --}}
-    <section class="overflow-hidden rounded-2xl border border-red-200 bg-red-50">
-        <div class="flex items-start gap-4 p-5">
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-700">
-                <i class="fa-solid fa-phone-volume text-xl"></i>
+                {{-- Reception --}}
+    <details class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-5 hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+            <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700">
+                    <i class="fa-solid fa-bell-concierge text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900">
+                        Reception
+                    </h3>
+                    <p class="mt-1 text-xs text-slate-500">
+                        Sarah Resort
+                    </p>
+                </div>
             </div>
 
-            <div class="min-w-0 flex-1">
-                <p class="text-xs font-bold uppercase tracking-widest text-red-700">
-                    National Emergency Service
+            <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform group-open:rotate-180"></i>
+        </summary>
+
+        <div class="border-t border-slate-100 p-4 sm:p-5">
+            <div class="rounded-xl bg-amber-50 p-4">
+                <p class="font-semibold text-slate-900">
+                    Sarah Resort Reception
                 </p>
 
-                <h2 class="mt-1 text-lg font-bold text-red-900">
-                    National Emergency Number
-                </h2>
-
-                <p class="mt-1 text-sm text-red-800">
-                    For urgent emergencies in Bangladesh.
-                </p>
-
-                <a href="tel:999"
-                   class="mt-4 inline-flex min-h-12 items-center gap-3 rounded-xl bg-red-600 px-5 py-3 text-white shadow-sm transition hover:bg-red-700">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="text-xl font-bold tracking-wide">999</span>
-                    <span class="text-sm font-medium">Call now</span>
-                </a>
+                <div class="mt-3 flex items-start gap-3 text-sm leading-6 text-slate-700">
+                    <i class="fa-solid fa-phone-volume mt-1 text-amber-700"></i>
+                    <p>
+                        Dial <strong>0</strong> from the room telephone
+                        to contact reception.
+                    </p>
+                </div>
             </div>
         </div>
-    </section>
+    </details>
 
     {{-- Emergency Contacts --}}
     <section>
@@ -376,43 +383,36 @@
                 </div>
             </details>
 
-            {{-- Reception --}}
-            <details class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-5 hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
-                    <div class="flex items-center gap-3">
-                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700">
-                            <i class="fa-solid fa-bell-concierge text-lg"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-slate-900">
-                                Reception
-                            </h3>
-                            <p class="mt-1 text-xs text-slate-500">
-                                Sarah Resort
-                            </p>
-                        </div>
-                    </div>
+        </div>
+    </section>
 
-                    <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform group-open:rotate-180"></i>
-                </summary>
+        {{-- National Emergency Number --}}
+    <section class="overflow-hidden rounded-2xl border border-red-200 bg-red-50">
+        <div class="flex items-start gap-4 p-5">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-700">
+                <i class="fa-solid fa-phone-volume text-xl"></i>
+            </div>
 
-                <div class="border-t border-slate-100 p-4 sm:p-5">
-                    <div class="rounded-xl bg-amber-50 p-4">
-                        <p class="font-semibold text-slate-900">
-                            Sarah Resort Reception
-                        </p>
+            <div class="min-w-0 flex-1">
+                <p class="text-xs font-bold uppercase tracking-widest text-red-700">
+                    National Emergency Service
+                </p>
 
-                        <div class="mt-3 flex items-start gap-3 text-sm leading-6 text-slate-700">
-                            <i class="fa-solid fa-phone-volume mt-1 text-amber-700"></i>
-                            <p>
-                                Dial <strong>0</strong> from the room telephone
-                                to contact reception.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </details>
+                <h2 class="mt-1 text-lg font-bold text-red-900">
+                    National Emergency Number
+                </h2>
 
+                <p class="mt-1 text-sm text-red-800">
+                    For urgent emergencies in Bangladesh.
+                </p>
+
+                <a href="tel:999"
+                   class="mt-4 inline-flex min-h-12 items-center gap-3 rounded-xl bg-red-600 px-5 py-3 text-white shadow-sm transition hover:bg-red-700">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="text-xl font-bold tracking-wide">999</span>
+                    <span class="text-sm font-medium">Call now</span>
+                </a>
+            </div>
         </div>
     </section>
 

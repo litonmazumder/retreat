@@ -9,7 +9,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1">
 
-    <title>@yield('title', 'Asia Seminar 2026')</title>
+    <title>@yield('title', 'Annual Retreat 2026')</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -70,7 +70,7 @@
 
     <header
         class="h-60 bg-cover bg-center bg-no-repeat h-60 rounded-b-3xl bg-cover bg-center bg-no-repeat"
-        style="background-image: url('{{ asset('images/bg/11th-Asia-Seminar-KV.webp') }}');">
+        style="background-image: url('{{ asset('images/bg/annual-retreat-login-2026.webp') }}');">
     </header>
 
     <!-- <header class="bg-[#00477A] px-6 pt-10 pb-8 text-white">

@@ -21,7 +21,7 @@
                             style="background:#00477A;padding:35px 30px;color:#ffffff;">
 
                             <h1 style="margin:0;font-size:28px;font-weight:bold;color:#FFFFFF;">
-                                Asia Seminar 2026
+                                Swisscontact Annual Retreat 2026
                             </h1>
 
                             <!-- <p style="margin:10px 0 0;font-size:16px;opacity:.9;">
@@ -40,7 +40,7 @@
                             </p>
 
                             <p style="font-size:16px;line-height:1.8;">
-                                Welcome to the <strong>Asia Seminar 2026 Participant Portal</strong>.
+                                Welcome to the <strong>Swisscontact Annual Retreat 2026 Participant Portal</strong>.
                             </p>
 
                             <p style="font-size:16px;line-height:1.8;">
@@ -101,7 +101,7 @@
                             </p>
 
                             <p style="margin-top:10px;font-weight:bold;color:#00477A;font-size:16px;">
-                                Asia Seminar 2026 Organizing Team
+                                Swisscontact Annual Retreat 2026 Organizing Team
                             </p>
 
                         </td>
@@ -117,7 +117,7 @@
                             </p>
 
                             <p style="margin:8px 0 0;font-size:13px;color:#94a3b8;">
-                                © {{ date('Y') }} Asia Seminar 2026. All rights reserved.
+                                © {{ date('Y') }} Swisscontact Annual Retreat 2026. All rights reserved.
                             </p>
 
                         </td>

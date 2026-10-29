@@ -17,7 +17,6 @@
             'bg-white',
             'text-blue-700',
             'text-slate-900',
-            'border-slate-200',
         ],
         'Lunch' => [
             'border-emerald-500',
@@ -52,9 +51,8 @@
             'bg-white',
             'text-blue-700',
             'text-slate-900',
-            'border-slate-200',
         ],
-        'চলো ঘুড়ি ওড়াতে যাই' => [
+        'Optional Afternoon Activities' => [
             'border-indigo-500',
             'bg-indigo-50',
             'text-indigo-700',
@@ -66,7 +64,6 @@
             'bg-white',
             'text-blue-700',
             'text-slate-900',
-            'border-slate-200',
         ],
         'Free Time & Venue Exploration' => [
             'border-amber-500',
@@ -89,7 +86,7 @@
         'বনমেলা: Swisscontact Carnival' => 'fa-wand-magic-sparkles',
         'Lunch' => 'fa-utensils',
         'Team-Building Games & Activities' => 'fa-people-group',
-        'চলো ঘুড়ি ওড়াতে যাই' => 'fa-paper-plane',
+        'Optional Afternoon Activities' => 'fa-compass',
         'Wellbeing Session' => 'fa-heart-pulse',
         'Free Time & Venue Exploration' => 'fa-person-walking',
         'তারা: Dinner, Stargazing & Karaoke Night' => 'fa-star',
@@ -138,17 +135,13 @@
         'Team-Building Games & Activities' => [
             'people' => 'Nowshin Anjum',
             'location' => 'Banquet Hall & Central Field',
-        ],
-                'Team-Building Games & Activities' => [
-            'people' => 'Nowshin Anjum',
-            'location' => 'Banquet Hall & Central Field',
         ],       
-        'চলো ঘুড়ি ওড়াতে যাই' => [
+        'Optional Afternoon Activities' => [
+            'items' => ['Let\'s go for Kite Flying', 'Let\'s play Cricket'],
             'location' => 'Central Field',
         ],
         'Wellbeing Session' => [
             'people' => 'Salma Akhter, Mir Rafiat Salman',
-            'location' => 'Auditorium',
         ],
         'তারা: Dinner, Stargazing & Karaoke Night' => [
             'items' => ['Dinner', 'Stargazing', 'Karaoke'],
@@ -211,7 +204,6 @@
                     'bg-white',
                     'text-blue-700',
                     'text-slate-900',
-                    'border-slate-200',
                 ];
 
                 $icon = $icons[$title] ?? 'fa-calendar-day';
@@ -285,7 +277,7 @@
 
                 {{-- Facilitators / people --}}
                 @if (!empty($detail['people']))
-                    <div class="mt-4 border-t {{ $style[4] }} pt-3">
+                    <div class="mt-4 pt-3">
                         <p class="text-sm text-slate-500">
                             <i class="fa-solid fa-users mr-2 text-[#00477A]"></i>
                             {{ $detail['people'] }}
@@ -304,7 +296,7 @@
                         @endforeach
                     </div>
                 @elseif (!empty($detail['location']) || $schedule->venue)
-                    <div class="mt-4 border-t {{ $style[4] }} pt-3">
+                    <div class="mt-4 pt-3">
                         <p class="text-sm {{ $style[3] }}">
                             <i class="fa-solid fa-location-dot mr-2 text-[#00477A]"></i>
                             {{ $detail['location'] ?? $schedule->venue }}

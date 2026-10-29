@@ -43,7 +43,7 @@ Route::middleware('participant.guest')->group(function () {
         ->name('auth.resend.otp');
 });  
 
-Route::middleware('participant.auth', 'dev.email.allowlist',)
+Route::middleware('participant.auth')
     ->group(function () {
        
         Route::get('/', [HomeController::class, 'dashboard'])
