@@ -25,7 +25,7 @@
 
 <meta
     name="apple-mobile-web-app-title"
-    content="Asia Seminar">
+    content="Retreat 2026">
 
 <meta
     name="mobile-web-app-capable"
@@ -186,7 +186,7 @@
         </div>
 
         <h2 class="mt-6 text-center text-2xl font-bold text-slate-800">
-            Install Asia Seminar
+            Install Swisscontact Annual Retreat 2026
         </h2>
 
         <div class="mt-8 space-y-3">

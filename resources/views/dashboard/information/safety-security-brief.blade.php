@@ -200,7 +200,7 @@
             {{-- Nearest Fire Station --}}
             <div class="flex items-start gap-3">
                 <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-700">
-                    <i class="fa-solid fa-truck-fire"></i>
+                    <i class="fa-solid fa-building"></i>
                 </div>
 
                 <p class="text-sm leading-6 text-slate-700">
