@@ -20,20 +20,20 @@
 
     function updateSchedule() {
         // for live pod
-       // const { date: todayDate, timestamp: now } = getDhakaDateTime();
+       const { date: todayDate, timestamp: now } = getDhakaDateTime();
 
        //temp check
 
-       const simulatedDateTime = new Date('2026-11-03T10:00:00+06:00');
+    //    const simulatedDateTime = new Date('2026-11-03T10:00:00+06:00');
 
-        const todayDate = new Intl.DateTimeFormat('en-CA', {
-            timeZone: 'Asia/Dhaka',
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-        }).format(simulatedDateTime);
+    //     const todayDate = new Intl.DateTimeFormat('en-CA', {
+    //         timeZone: 'Asia/Dhaka',
+    //         year: 'numeric',
+    //         month: '2-digit',
+    //         day: '2-digit'
+    //     }).format(simulatedDateTime);
 
-        const now = simulatedDateTime.getTime();
+    //     const now = simulatedDateTime.getTime();
 
         //temp check end
 
