@@ -33,9 +33,9 @@
             </div>
 
             <div>
-                <h2 class="text-lg font-bold text-slate-900">
+                <!-- <h2 class="text-lg font-bold text-slate-900">
                     Emergency Contacts
-                </h2>
+                </h2> -->
                 <p class="mt-1 text-sm leading-6 text-slate-600">
                     For first aid, security, resort assistance and other
                     urgent support during the retreat.

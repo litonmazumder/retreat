@@ -4,26 +4,39 @@
     $daySchedules = $schedules->get($dayDate, collect());
 
     $styles = [
-        'Registration & Breakfast' => ['border-blue-600', 'bg-white', 'text-blue-700'],
-        'Departure from Dhaka' => ['border-blue-600', 'bg-white', 'text-blue-700'],
-        'Arrival' => ['border-blue-600', 'bg-white', 'text-blue-700'],
-        'Opening Ceremony' => ['border-blue-600', 'bg-white', 'text-blue-700'],
-        'Lunch & Check-In' => ['border-emerald-500', 'bg-emerald-50', 'text-emerald-700'],
-        'GESI Session' => ['border-blue-600', 'bg-white', 'text-blue-700'],
-        'Fire & Safety' => ['border-blue-600', 'bg-white', 'text-blue-700'],
-        'Team Photo' => ['border-indigo-500', 'bg-indigo-50', 'text-indigo-700'],
-        'Free Time & Venue Exploration' => ['border-amber-500', 'bg-amber-50', 'text-amber-700'],
-        'Dinner' => ['border-emerald-500', 'bg-emerald-50', 'text-emerald-700'],
+        // Travel & Transportation
+        'Registration & Breakfast' => ['border-amber-500', 'bg-amber-50', 'text-amber-700'],
+        'Departure from Dhaka' => ['border-blue-500', 'bg-blue-50', 'text-blue-700'],
+        'Arrival' => ['border-cyan-500', 'bg-cyan-50', 'text-cyan-700'],
+
+        // Ceremonies & Activities
+        'Opening Ceremony' => ['border-indigo-500', 'bg-indigo-50', 'text-indigo-700'],
+        'Team Photo' => ['border-pink-500', 'bg-pink-50', 'text-pink-700'],
         'Cultural Night' => ['border-purple-500', 'bg-purple-50', 'text-purple-700'],
+
+        // Meals & Breaks
+        'Lunch & Check-In' => ['border-emerald-500', 'bg-emerald-50', 'text-emerald-700'],
+        'Lunch break and Check-in' => ['border-emerald-500', 'bg-emerald-50', 'text-emerald-700'],
+        'Dinner' => ['border-orange-500', 'bg-orange-50', 'text-orange-700'],
+        'Free Time & Venue Exploration' => ['border-teal-500', 'bg-teal-50', 'text-teal-700'],
+
+        // Sessions & Workshops
+        'GESI Session' => ['border-violet-500', 'bg-violet-50', 'text-violet-700'],
+        'Papercuts' => ['border-fuchsia-500', 'bg-fuchsia-50', 'text-fuchsia-700'],
+
+        // Safety
+        'Fire & Safety' => ['border-red-500', 'bg-red-50', 'text-red-700'],
     ];
 
     $icons = [
         'Registration & Breakfast' => 'fa-mug-hot',
         'Departure from Dhaka' => 'fa-bus',
-        'Arrival' => 'fa-door-open',
+        'Arrival' => 'fa-location-dot',
         'Opening Ceremony' => 'fa-flag',
         'Lunch & Check-In' => 'fa-utensils',
+        'Lunch break and Check-in' => 'fa-utensils',
         'GESI Session' => 'fa-people-group',
+        'Papercuts' => 'fa-heart',
         'Fire & Safety' => 'fa-fire-extinguisher',
         'Team Photo' => 'fa-camera',
         'Free Time & Venue Exploration' => 'fa-person-walking',
@@ -32,39 +45,51 @@
     ];
 
     $details = [
-        'Registration & Breakfast' => [
-            'items' => ['Registration', 'Takeaway breakfast'],
-            'items' => ['A clean retreat starts with us. Please drop the packets in the bin.'],
+        'Registration & Breakfast (Takeaway)' => [
+            'items' => [
+                'A clean retreat starts with us. Please drop the packets in the bin.',
+            ],
         ],
+
         'Departure from Dhaka' => [
             'items' => ['Travel to Sarah Resort'],
             'label' => 'Departure Point',
             'place' => 'Swisscontact Country Office',
         ],
-        'Arrival and Venue Registration' => [
+
+        'Arrival' => [
             'items' => ['Arrive at the retreat venue', 'Complete venue registration'],
             'place' => 'Sarah Resort Reception',
         ],
+
         'Opening Ceremony' => [
             'items' => ['Welcome remarks', 'Safety & security briefing', 'Staff Awards', 'Ice-breaking'],
             'people' => 'Helal Hussain, Tamiz Uddin Mullick, Humaira Ferdous Shifa',
         ],
-        'Lunch break and Check-in' => [
-            'items' => ['Remember to wear your Retreat T‑Shirt'],
+
+        'Lunch & Check-In' => [
+            'items' => ['Remember to wear your Retreat T-Shirt'],
         ],
+
         'Papercuts' => [
-            'items' => ['Meant Well but Landed Awkwardly: A Wellness Check for Our Everyday Behaviour', 'An all staff session'],
+            'items' => [
+                'Meant Well but Landed Awkwardly: A Wellness Check for Our Everyday Behaviour',
+                'An all staff session',
+            ],
             'people' => 'Projna Dasgupta, Azmul Huda',
         ],
+
         'Fire & Safety' => [
             'items' => ['Fire and safety refresher for all staff'],
             'people' => 'Sabbir Rahman Khan, Moumita A Mallick',
         ],
+
         'Team Photo' => [
-            'items' => ['Remember to wear your Retreat T‑Shirt'],
+            'items' => ['Remember to wear your Retreat T-Shirt'],
         ],
+
         'Free Time & Venue Exploration' => [
-            'items' => ["Let's Play Cricket : Central Field", 'Snack available at central field'],
+            'items' => ["Let's Play Cricket", 'Snacks are available'],
         ],
     ];
 @endphp

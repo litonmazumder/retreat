@@ -1,23 +1,52 @@
-
 @php
     $dayDate = '2026-11-05';
 
     $daySchedules = $schedules->get($dayDate, collect());
 
     $styles = [
+        // Meals - Same across all days
         'Breakfast' => [
+            'border-amber-500',
+            'bg-amber-50',
+            'text-amber-700',
+            'text-amber-800',
+            'border-amber-200',
+        ],
+
+        'Lunch' => [
             'border-emerald-500',
             'bg-emerald-50',
             'text-emerald-700',
             'text-emerald-800',
             'border-emerald-200',
         ],
-        'Pack-Up' => [
-            'border-blue-600',
-            'bg-white',
-            'text-blue-700',
-            'text-slate-900',
+
+        'Dinner' => [
+            'border-orange-500',
+            'bg-orange-50',
+            'text-orange-700',
+            'text-orange-800',
+            'border-orange-200',
         ],
+
+        // Packing & Check-out
+        'Pack-Up' => [
+            'border-slate-500',
+            'bg-slate-50',
+            'text-slate-700',
+            'text-slate-800',
+            'border-slate-200',
+        ],
+
+        'Check-Out' => [
+            'border-cyan-500',
+            'bg-cyan-50',
+            'text-cyan-700',
+            'text-cyan-800',
+            'border-cyan-200',
+        ],
+
+        // Ceremony & Awards - Same indigo as Day 1
         'Closing Session & Award Ceremony' => [
             'border-indigo-500',
             'bg-indigo-50',
@@ -25,45 +54,43 @@
             'text-indigo-800',
             'border-indigo-200',
         ],
-        'Check-Out' => [
-            'border-blue-600',
-            'bg-white',
-            'text-blue-700',
-            'text-slate-900',
-        ],
+
+        // Travel - Same blue as Day 1
         'Departure for Dhaka' => [
-            'border-red-500',
-            'bg-red-50',
-            'text-red-700',
-            'text-red-800',
-            'border-red-200',
+            'border-blue-500',
+            'bg-blue-50',
+            'text-blue-700',
+            'text-blue-800',
+            'border-blue-200',
         ],
     ];
 
     $icons = [
         'Breakfast' => 'fa-mug-hot',
+        'Lunch' => 'fa-utensils',
+        'Dinner' => 'fa-utensils',
         'Pack-Up' => 'fa-suitcase',
-        'Closing Session & Award Ceremony' => 'fa-trophy',
         'Check-Out' => 'fa-key',
+        'Closing Session & Award Ceremony' => 'fa-trophy',
         'Departure for Dhaka' => 'fa-bus',
     ];
 
-    /*
-     * Supplemental presentation details from the original Day 3 design.
-     * Titles, times, descriptions, subtitles and venues are read from
-     * the retreat_schedules database records.
-     */
     $details = [
         'Breakfast' => [
             'location' => 'Club House Restaurant',
         ],
-        'Pack-Up' => [],
-        'Closing Session & Award Ceremony' => [
+
+        'Pack-Up' => [
+        
             'items' => [
-                'Closing session',
+                'Time to pack your bags, check your belongings, and get ready for the journey home!',
             ],
+        ],
+        'Closing Session & Award Ceremony' => [
+            'items' => ['Closing session'],
             'location' => 'Beside Central Field',
         ],
+
         'Check-Out' => [
             'items' => [
                 'Return room keys',
@@ -71,15 +98,14 @@
             ],
             'location' => 'Sarah Resort Reception',
         ],
+
         'Departure for Dhaka' => [
             'items' => [
                 'Return journey to Swisscontact Country Office, Dhaka',
             ],
-            'location' => 'Sarah Resort Reception',
         ],
     ];
 @endphp
-
 <section class="space-y-6" data-retreat-day="{{ $dayDate }}">
 
     {{-- Day Header --}}

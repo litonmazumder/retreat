@@ -22,13 +22,9 @@
         <header class="mb-6 overflow-hidden rounded-3xl bg-[#00477A] p-5 text-white shadow-md sm:p-8">
             <div class="flex items-center justify-between gap-3">
                 <div>
-                    <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                        বনমেলা
-                    </h1>
-
-                    <p class="mt-1 text-sm font-medium text-blue-100 sm:text-base">
-                        Swisscontact Carnival
-                    </p>
+                    <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                       Swisscontact Carnival
+                    </h2>
                 </div>
 
                 <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/15 sm:h-14 sm:w-14">

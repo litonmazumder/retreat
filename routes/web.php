@@ -99,16 +99,20 @@ Route::middleware('participant.auth')
 
                 Route::view('/emergency-contacts', 'dashboard.information.emergency-contacts')
                     ->name('emergency-contacts');
-                Route::view('/lsp', 'dashboard.information.lsp')
-                    ->name('lsp');
+                Route::view('/safety-security-brief', 'dashboard.information.safety-security-brief')
+                    ->name('safety-security-brief');
                  Route::view('/rooms', 'dashboard.information.rooms')
                     ->name('rooms');
-                Route::get('/lsp/pdf', function () {
-                        return response()->file(public_path('documents/lsp.pdf'));
-                    })->name('lsp.pdf');
+                Route::get('/safety-security-brief/pdf', function () {
+                        return response()->file(public_path('documents/safety-security-brief.pdf'));
+                    })->name('safety-security-brief.pdf');
                 Route::get('/rooms/pdf', function () {
                         return response()->file(public_path('documents/Asia_Seminar_Rooms.pdf'));
-                    })->name('rooms.pdf');         
+                    })->name('rooms.pdf');
+                Route::view('/transportation', 'dashboard.information.transportation')
+                    ->name('transportation');
+                Route::view('/games', 'dashboard.information.games')
+                    ->name('games');                  
             });
 
             Route::prefix('carnival')

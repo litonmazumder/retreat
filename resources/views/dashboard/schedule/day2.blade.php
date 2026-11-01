@@ -5,18 +5,13 @@
     $daySchedules = $schedules->get($dayDate, collect());
 
     $styles = [
+        // Meals
         'Breakfast' => [
-            'border-emerald-500',
-            'bg-emerald-50',
-            'text-emerald-700',
-            'text-emerald-800',
-            'border-emerald-200',
-        ],
-        'বনমেলা: Swisscontact Carnival' => [
-            'border-blue-600',
-            'bg-white',
-            'text-blue-700',
-            'text-slate-900',
+            'border-amber-500',
+            'bg-amber-50',
+            'text-amber-700',
+            'text-amber-800',
+            'border-amber-200',
         ],
         'Lunch' => [
             'border-emerald-500',
@@ -25,6 +20,24 @@
             'text-emerald-800',
             'border-emerald-200',
         ],
+        'Dinner' => [
+            'border-orange-500',
+            'bg-orange-50',
+            'text-orange-700',
+            'text-orange-800',
+            'border-orange-200',
+        ],
+
+        // Carnival & Creative Activities
+        'বনমেলা: Swisscontact Carnival' => [
+            'border-fuchsia-500',
+            'bg-fuchsia-50',
+            'text-fuchsia-700',
+            'text-fuchsia-800',
+            'border-fuchsia-200',
+        ],
+
+        // Games & Team Building
         'হই হই রই রই' => [
             'border-orange-500',
             'bg-orange-50',
@@ -47,49 +60,71 @@
             'border-indigo-200',
         ],
         'Team-Building Games & Activities' => [
-            'border-blue-600',
-            'bg-white',
+            'border-blue-500',
+            'bg-blue-50',
             'text-blue-700',
-            'text-slate-900',
+            'text-blue-800',
+            'border-blue-200',
         ],
+
+        // Outdoor & Leisure
         'Optional Afternoon Activities' => [
-            'border-indigo-500',
-            'bg-indigo-50',
-            'text-indigo-700',
-            'text-indigo-800',
-            'border-indigo-200',
-        ],
-        'Wellbeing Session' => [
-            'border-blue-600',
-            'bg-white',
-            'text-blue-700',
-            'text-slate-900',
+            'border-teal-500',
+            'bg-teal-50',
+            'text-teal-700',
+            'text-teal-800',
+            'border-teal-200',
         ],
         'Free Time & Venue Exploration' => [
-            'border-amber-500',
-            'bg-amber-50',
-            'text-amber-700',
-            'text-amber-800',
-            'border-amber-200',
+            'border-teal-500',
+            'bg-teal-50',
+            'text-teal-700',
+            'text-teal-800',
+            'border-teal-200',
         ],
-        'তারা: Dinner, Stargazing & Karaoke Night' => [
-            'border-indigo-600',
-            'bg-indigo-50',
-            'text-indigo-700',
-            'text-indigo-900',
-            'border-indigo-200',
+
+        // Wellbeing
+        'Wellbeing Session' => [
+            'border-rose-500',
+            'bg-rose-50',
+            'text-rose-700',
+            'text-rose-800',
+            'border-rose-200',
+        ],
+
+        'তারা:Stargazing & Karaoke Night' => [
+            'border-violet-500',
+            'bg-violet-50',
+            'text-violet-700',
+            'text-violet-800',
+            'border-violet-200',
         ],
     ];
 
     $icons = [
+        // Meals
         'Breakfast' => 'fa-mug-hot',
-        'বনমেলা: Swisscontact Carnival' => 'fa-wand-magic-sparkles',
         'Lunch' => 'fa-utensils',
+        'Dinner' => 'fa-utensils',
+
+        // Carnival
+        'বনমেলা: Swisscontact Carnival' => 'fa-wand-magic-sparkles',
+
+        // Games & Team Building
+        'হই হই রই রই' => 'fa-gamepad',
+        'Indoor to Outdoor Transition' => 'fa-person-walking-arrow-right',
+        'Tic Tac Toe Relay' => 'fa-table-cells',
         'Team-Building Games & Activities' => 'fa-people-group',
+
+        // Outdoor & Leisure
         'Optional Afternoon Activities' => 'fa-compass',
-        'Wellbeing Session' => 'fa-heart-pulse',
         'Free Time & Venue Exploration' => 'fa-person-walking',
-        'তারা: Dinner, Stargazing & Karaoke Night' => 'fa-star',
+
+        // Wellbeing
+        'Wellbeing Session' => 'fa-heart-pulse',
+
+        // Evening Entertainment
+        'তারা:Stargazing & Karaoke Night' => 'fa-star',
     ];
 
     /*
@@ -101,7 +136,8 @@
         'Breakfast' => [
             'location' => 'Club House Restaurant',
         ],
-        'বনমেলা: Swisscontact Carnival' => [
+
+        'Swisscontact Carnival' => [
             'groups' => [
                 'Indoor Activities' => [
                     'icon' => 'fa-palette',
@@ -118,35 +154,47 @@
                 'Beside Central Field (outdoor)',
             ],
         ],
+
         'Lunch' => [
             'location' => 'Club House Restaurant',
         ],
+
         'হই হই রই রই' => [
             'people' => 'Tawhidul Islam, Marajul Islam',
             'location' => 'Banquet Hall',
         ],
+
         'Indoor to Outdoor Transition' => [
             'items' => ['Outdoor Snacks at 4:00 PM, Central Field'],
         ],
+
         'Tic Tac Toe Relay' => [
             'people' => 'Tasmim Sinha, Abir Hossain',
             'location' => 'Central Field',
         ],
+
         'Team-Building Games & Activities' => [
             'people' => 'Nowshin Anjum',
             'location' => 'Banquet Hall & Central Field',
-        ],       
+        ],
+
         'Optional Afternoon Activities' => [
-            'items' => ['Let\'s go for Kite Flying', 'Let\'s play Cricket'],
+            'items' => ["Let's go for Kite Flying", "Let's play Cricket"],
             'location' => 'Central Field',
         ],
+
         'Wellbeing Session' => [
             'people' => 'Salma Akhter, Mir Rafiat Salman',
         ],
-        'তারা: Dinner, Stargazing & Karaoke Night' => [
-            'items' => ['Dinner', 'Stargazing', 'Karaoke'],
+
+        'Free Time & Venue Exploration' => [
+            'items' => ['Unwind, explore the resort, enjoy the surroundings, or simply relax and recharge at your own pace!'],
+        ],
+
+        'তারা: Stargazing & Karaoke Night' => [
+            'items' => ['Stargazing', 'Karaoke'],
             'people' => 'Zubuyer Kaolin',
-            'location' => 'Camp Ground',
+            'location' => 'Central Field',
         ],
     ];
 @endphp
@@ -277,9 +325,14 @@
 
                 {{-- Facilitators / people --}}
                 @if (!empty($detail['people']))
+                    @php
+                        $people = array_filter(array_map('trim', explode(',', $detail['people'])));
+                        $isMultiple = count($people) > 1;
+                    @endphp
+
                     <div class="mt-4 pt-3">
                         <p class="text-sm text-slate-500">
-                            <i class="fa-solid fa-users mr-2 text-[#00477A]"></i>
+                            <i class="fa-solid {{ $isMultiple ? 'fa-users' : 'fa-user' }} mr-2 text-[#00477A]"></i>
                             {{ $detail['people'] }}
                         </p>
                     </div>

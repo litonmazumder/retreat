@@ -193,10 +193,22 @@
                 <h3 class="mt-4 font-semibold">Rooms</h3>
             </a>
 
+            {{-- Transportation --}}
+            <a href="{{route('transportation')}}" class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-[#00477A] hover:shadow-md">
+                <i class="fa-solid fa-car text-3xl text-[#00477A]"></i>
+                <h3 class="mt-4 font-semibold">Transportation</h3>
+            </a>
+
+            {{-- Games --}}
+            <a href="{{route('games')}}" class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-[#00477A] hover:shadow-md">
+                <i class="fa-solid fa-gamepad text-3xl text-[#00477A]"></i>
+                <h3 class="mt-4 font-semibold">Games</h3>
+            </a>
+
             {{-- LSP --}}
-            <a href="{{route('lsp')}}" class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-[#00477A] hover:shadow-md">
+            <a href="{{route('safety-security-brief')}}" class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-[#00477A] hover:shadow-md">
                 <i class="fa-solid fa-file-lines text-3xl text-[#00477A]"></i>
-                <h3 class="mt-4 font-semibold">LSP</h3>
+                <h3 class="mt-4 font-semibold">Safety & Security</h3>
             </a>
 
         </div>
