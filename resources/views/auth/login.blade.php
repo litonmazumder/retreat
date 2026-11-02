@@ -86,7 +86,7 @@
 
         <!-- Help Text -->
         <p class="mt-6 text-center text-xs text-slate-500">
-            Only registered staff can access this portal
+            Only Swisscontact staff can access this portal
         </p>
 
     </div>
