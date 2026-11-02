@@ -179,7 +179,7 @@
         ],
 
         'Optional Afternoon Activities' => [
-            'items' => ["Let's go for Kite Flying", "Let's play Cricket"],
+            'items' => ["Let's go for Kite Flying", "Let's play Football"],
             'location' => 'Central Field',
         ],
 
