@@ -1,6 +1,6 @@
 @extends('layouts.register')
 
-@section('title', 'Sign In - Asia Seminar 2026')
+@section('title', 'Sign In - Retreat 2026')
 
 @section('content')
 
