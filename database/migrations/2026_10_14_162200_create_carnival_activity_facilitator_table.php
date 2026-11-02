@@ -24,7 +24,6 @@ return new class extends Migration
             $table->unique(['activity_id', 'participant_id']);
         });
     }
-
     public function down(): void
     {
         Schema::dropIfExists('carnival_activity_facilitator');
