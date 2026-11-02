@@ -20,12 +20,12 @@ return new class extends Migration
                 ->constrained('carnival_activities')
                 ->cascadeOnDelete();
 
-            $table->timestamps();
+            $table->string('wave', 10)->nullable();
 
-            $table->unique(
-                ['participant_id', 'activity_id'],
-                'participant_activity_unique'
-            );
+            $table->dateTime('start_time')->nullable();
+            $table->dateTime('end_time')->nullable();
+
+            $table->timestamps();
         });
     }
 

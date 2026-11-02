@@ -17,14 +17,28 @@ return new class extends Migration
                 ->cascadeOnDelete();
 
             $table->string('name');
+            $table->string('heading')->nullable();
+            $table->text('subtitle')->nullable();
             $table->string('slug')->unique();
+
             $table->text('description')->nullable();
             $table->json('instructions')->nullable();
+
             $table->string('image')->nullable();
+            $table->string('icon')->nullable();
             $table->string('venue')->nullable();
-            $table->dateTime('starts_at')->nullable();
-            $table->dateTime('ends_at')->nullable();
+
+            $table->date('session_date')->nullable();
+
+            $table->time('wave_1_start_time')->nullable();
+            $table->time('wave_1_end_time')->nullable();
+            $table->time('wave_2_start_time')->nullable();
+            $table->time('wave_2_end_time')->nullable();
+
             $table->boolean('is_active')->default(true);
+
+            $table->string('type')->nullable();
+            $table->text('facilitators')->nullable();
 
             $table->timestamps();
         });
